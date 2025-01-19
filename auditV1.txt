@@ -1,7 +1,7 @@
 Le premier point, les identifiants de la base de données sont visibles aux yeux de tous, et donc n'importe qui peut prendre possession de la base.
 
 Le manque de validation de certains champs de la base de données est aussi une faille de sécurité. Par exemple, beaucoup de champs qui devraient être obligatoires ne le sont pas.
-Au niveau des INSERT, si on lance le code plusieurs fois, les données contenues dans les tables seront dupliquées
+Au niveau des INSERT, si on lance le code plusieurs fois, les données contenues dans les tables seront dupliquées.
 
 La possibilité d'exploitation des requêtes actuelles par des injections SQL doit être corrigée.
 
