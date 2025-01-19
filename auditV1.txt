@@ -1,0 +1,13 @@
+Le premier point, les identifiants de la base de données sont visibles aux yeux de tous, et donc n'importe qui peut prendre possession de la base.
+
+Le manque de validation de certains champs de la base de données est aussi une faille de sécutrité. Par exemple, beaucoup de champs qui devraient être obligatoire ne le sont pas.
+
+La possibilités d'exploitation des requêtes actuelles par des injections SQL doit être corrigé.
+
+Exemple de requêtes:
+connection.query(`SELECT * FROM products WHERE id = ${req.params.id}`, ...);
+Si {req.params.id} contient comme valeur "1 OR 1=1", ça pourrait divulguer toutes les données.
+
+Pour la palier ce problème, il faudrait faire des requêtes paramétrées ou des procédures stockées.
+
+Et pour finir, organiser le code pour rendre le tout un peu plus lisible.
