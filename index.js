@@ -78,6 +78,97 @@ function initializeDatabase() {
       FOREIGN KEY (product_id) REFERENCES products(id)
     )
     `,
+    `
+    INSERT INTO categories (name) VALUES
+    ('Jets'), ('Avions de ligne'), ('Avions militaires'), ('Drones')
+    `,
+    `
+    INSERT INTO suppliers (name, address, phone, email) VALUES
+    ('PaperCraft Supplies', '123 Rue des Papiers, Paris', '0145567890', 'contact@papercraft.com'),
+    ('AirPaper Ltd.', '45 Aviation Street, London', '00442012345678', 'info@airpaper.co.uk'),
+    ('Origami Experts', '12 Sakura Blvd, Tokyo', '+81345678912', 'support@origamiexperts.jp'),
+    ('FoldedWings', '99 Paper Drive, New York', '+12124567890', 'info@foldedwings.us'),
+    ('SkyFold Creations', '88 Main Road, Sydney', '+61234567890', 'contact@skyfold.com'),
+    ('Crafting Aces', '22 Pioneer Lane, Toronto', '+14165551234', 'hello@craftingaces.ca'),
+    ('AirArt Papers', '10 Rue de la Création, Lyon', '0478234567', 'sales@airartpapers.fr'),
+    ('FlightForm Supplies', '77 Aviation Way, Berlin', '+493012345678', 'support@flightform.de'),
+    ('Wings of Paper', '5 Starlight Ave, Dublin', '+35314567890', 'info@wingsofpaper.ie'),
+    ('PaperFly Ltd.', '120 Craft Boulevard, Brussels', '+32212345678', 'sales@paperfly.be'),
+    ('GlidePaper Inc.', '11 Glide Street, Amsterdam', '+31204567890', 'contact@glidepaper.nl'),
+    ('MasterFolds', '13 Fold Lane, Rome', '+390612345678', 'support@masterfolds.it'),
+    ('AirFlow Creations', '9 Stream Road, Barcelona', '+349312345678', 'info@airflowcreations.es'),
+    ('SharpWings', '56 Edge Street, Vienna', '+43123456789', 'contact@sharpwings.at'),
+    ('AeroFold Supplies', '3 Flight Avenue, Zurich', '+414512345678', 'support@aerofold.ch'),
+    ('Precision Papers', '33 Craft Street, Brussels', '+32267890123', 'info@precisionpapers.be'),
+    ('SkyCraft Papers', '44 Foldway Road, Helsinki', '+358123456789', 'contact@skycraftpapers.fi'),
+    ('PaperInnovations', '88 Designer Way, Oslo', '+472312345678', 'info@paperinnovations.no'),
+    ('CraftElite', '101 Elite Lane, Stockholm', '+468123456789', 'support@craftelite.se'),
+    ('PrimeFold Papers', '15 Premium Street, Copenhagen', '+453456789123', 'sales@primefold.dk');
+    `,
+    `
+    INSERT INTO products (name, unit_price, stock_quantity, category_id) VALUES
+    ('Jet en papier classique', 9.99, 100, 1),
+    ('Jet supersonique en papier', 14.99, 80, 1),
+    ('Avion de ligne A380 en papier', 19.99, 60, 2),
+    ('Avion militaire F-16 en papier', 15.99, 50, 3),
+    ('Avion furtif en papier', 24.99, 30, 3),
+    ('Drone en papier modèle X', 12.99, 70, 4),
+    ('Avion de ligne B747 en papier', 18.99, 40, 2),
+    ('Avion militaire Rafale en papier', 17.99, 35, 3),
+    ('Drone rapide modèle Y', 13.99, 90, 4),
+    ('Hydravion classique', 16.99, 20, 2),
+    ('Mini-jet pliant', 8.99, 100, 1),
+    ('Avion de chasse Typhoon en papier', 21.99, 25, 3),
+    ('Planeur en papier modèle Alpha', 10.99, 60, 1),
+    ('Avion de ligne Concorde en papier', 22.99, 15, 2),
+    ('Avion militaire Mig-29 en papier', 19.99, 30, 3),
+    ('Avion furtif modèle Stealth X', 26.99, 10, 3),
+    ('Drone de reconnaissance modèle Z', 15.99, 40, 4),
+    ('Avion pliant rapide modèle Swift', 7.99, 120, 1),
+    ('Planeur long-courrier', 12.49, 50, 1),
+    ('Avion de ligne Embraer en papier', 16.49, 35, 2);
+    `,
+    `
+    INSERT INTO customers (name, address, phone, email) VALUES
+    ('Jean Dupont', '15 Rue de la Liberté, Lyon', '0478561234', 'jean.dupont@mail.com'),
+    ('Alice Martin', '23 Avenue des Alpes, Annecy', '0450627891', 'alice.martin@mail.com'),
+    ('Marc Leroy', '5 Boulevard Haussmann, Paris', '0165782345', 'marc.leroy@mail.com'),
+    ('Sophie Bernard', '78 Chemin des Écoles, Lille', '0320456789', 'sophie.bernard@mail.com'),
+    ('Paul Girard', '10 Allée des Fleurs, Nantes', '0240567891', 'paul.girard@mail.com'),
+    ('Emma Morel', '89 Avenue des Champs, Bordeaux', '0556789012', 'emma.morel@mail.com'),
+    ('Lucas Fabre', '34 Rue des Hirondelles, Marseille', '0490123456', 'lucas.fabre@mail.com'),
+    ('Chloé Renault', '67 Rue des Ajoncs, Nice', '0493567890', 'chloe.renault@mail.com'),
+    ('Nathan Caron', '12 Rue des Lilas, Grenoble', '0470891234', 'nathan.caron@mail.com'),
+    ('Camille Roussel', '18 Boulevard Saint-Michel, Paris', '0167345678', 'camille.roussel@mail.com'),
+    ('Hugo Lefèvre', '3 Rue de la Gare, Toulouse', '0561783456', 'hugo.lefevre@mail.com'),
+    ('Manon Dubois', '99 Boulevard Pasteur, Lyon', '0478256890', 'manon.dubois@mail.com'),
+    ('Clément Petit', '45 Avenue Carnot, Rennes', '0290123456', 'clement.petit@mail.com'),
+    ('Julie Garnier', '21 Rue de l’Église, Strasbourg', '0388123456', 'julie.garnier@mail.com'),
+    ('Théo Blanc', '14 Rue des Pins, Montpellier', '0467456789', 'theo.blanc@mail.com'),
+    ('Louise Noël', '30 Rue du Parc, Dijon', '0380567891', 'louise.noel@mail.com'),
+    ('Maxime Lambert', '77 Rue des Sapins, Limoges', '0554789012', 'maxime.lambert@mail.com'),
+    ('Clara Fontaine', '54 Boulevard de la République, Orléans', '0241123456', 'clara.fontaine@mail.com'),
+    ('Antoine Durand', '22 Rue des Rosiers, Le Havre', '0238456789', 'antoine.durand@mail.com'),
+    ('Léa Moreau', '9 Rue Victor Hugo, Tours', '0240567890', 'lea.moreau@mail.com');
+    `,
+    `
+    INSERT INTO orders (customer_id, order_date) VALUES
+    (1, '2025-01-01'), (2, '2025-01-02'), (3, '2025-01-05'), (4, '2025-01-06'),
+    (5, '2025-01-07'), (6, '2025-01-08'), (7, '2025-01-09'), (8, '2025-01-10'),
+    (9, '2025-01-11'), (10, '2025-01-12'), (11, '2025-01-13'), (12, '2025-01-14'),
+    (13, '2025-01-15'), (14, '2025-01-16'), (15, '2025-01-17'), (16, '2025-01-18'),
+    (17, '2025-01-19'), (18, '2025-01-20'), (19, '2025-01-21'), (20, '2025-01-22');
+
+    `,
+    `
+    INSERT INTO order_lines (order_id, product_id, quantity, unit_price) VALUES
+    (1, 1, 3, 9.99), (1, 3, 1, 19.99), (2, 2, 2, 14.99), (2, 5, 1, 24.99),
+    (3, 4, 2, 15.99), (3, 6, 1, 18.99), (4, 7, 4, 12.99), (4, 8, 1, 17.99),
+    (5, 10, 3, 16.99), (6, 12, 2, 21.99), (7, 14, 1, 22.99), (8, 9, 2, 13.99),
+    (9, 16, 1, 26.99), (10, 18, 5, 7.99), (11, 20, 2, 16.49), (12, 11, 1, 8.99),
+    (13, 15, 2, 19.99), (14, 17, 3, 12.49), (15, 19, 1, 10.99), (16, 13, 4, 10.99);
+
+    `,
   ]
 
   queries.forEach((query) => {
